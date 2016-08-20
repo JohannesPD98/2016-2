@@ -17,15 +17,15 @@ void relogio::get_hora(int* _h, int* _m, int* _s){
 }
 void relogio::tempo(){
 	s++;
-	if (s > 59) {
+	if (s >= 60) {
 		s -= 60;
 		m++;
 	}
-	if (m > 59) {
+	if (m >= 60) {
 		s -= 60;
 		h++;
 	}
-	if(h > 23) {
+	if(h >= 24) {
 		h -= 24;
 		cout << "É um novo dia!!" << endl;
 	}
