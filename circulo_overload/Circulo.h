@@ -2,6 +2,7 @@
 #define __CIRCULO_H__
 #include <iostream>
 #include <string>
+#include <sstream>
 using namespace std;
 
 class Circulo{
@@ -14,10 +15,13 @@ public:
 	Circulo(float, float, float);
 	void set_raio(float);
 	void inc_raio(float);
-	void set_centro(float, float);
-	void print_raio();
-	void print_centro();
-	void print_area();
+	void set_centro_x(float);
+	void set_centro_y(float);
+	float get_raio();
+	float get_centro_x();
+	float get_centro_y();
+	float get_area();
 	string ToString();
+	friend ostream &operator<<(ostream &Saida, Circulo &c);
 };
 #endif

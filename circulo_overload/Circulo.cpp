@@ -24,20 +24,68 @@ void Circulo::set_raio(float _raio){
 void Circulo::inc_raio(float perc){
 	raio+=raio*(perc/100);
 }
-void Circulo::set_centro(float x, float y){
+void Circulo::set_centro_x(float x){
 	centro_x=x;
+}
+void Circulo::set_centro_y(float y){
 	centro_y=y;
 }
-void Circulo::print_raio(){
-	cout << "Raio: " << raio << endl;
+float Circulo::get_raio(){
+	return raio;
 }
-void Circulo::print_centro(){
-	cout << "Centro: (" << centro_x << "," << centro_y << ")" << endl;
+float Circulo::get_centro_x(){
+	return centro_x;
 }
-void Circulo::print_area(){
-	cout << "Àrea: " << 3.14*raio*raio << endl;
+float Circulo::get_centro_y(){
+	return centro_y;
+}
+float Circulo::get_area(){
+	return 3.14*raio*raio;
 }
 string Circulo::ToString(){
-	string s = to_string(centro_x);
+	string s;
+	ostringstream convert;
+	convert << "Centro: (" << centro_x << "," << centro_y << ") " << "Raio: " << raio;
+	s = convert.str();
 	return s;
 }
+
+ostream &operator<<(ostream &Saida, Circulo &c){
+	cout << "Centro: (" << c.get_centro_x() << "," << c.get_centro_y() << ")" << endl;
+	cout << "Raio: " << c.get_raio() << endl;
+	return Saida;
+}
+
+istream& operator>>(istream &Entrada, Circulo &c){
+	float x,y,raio;
+	cin >> x;
+	c.set_centro_x(x);
+	cin >> y;
+	c.set_centro_y(y);
+	cin >> raio;
+	c.set_raio(raio);
+	return Entrada;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
