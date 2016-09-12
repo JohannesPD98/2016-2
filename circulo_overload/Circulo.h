@@ -22,6 +22,5 @@ public:
 	float get_centro_y();
 	float get_area();
 	string ToString();
-	friend ostream &operator<<(ostream &Saida, Circulo &c);
 };
 #endif

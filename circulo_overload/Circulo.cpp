@@ -50,22 +50,6 @@ string Circulo::ToString(){
 	return s;
 }
 
-ostream &operator<<(ostream &Saida, Circulo &c){
-	cout << "Centro: (" << c.get_centro_x() << "," << c.get_centro_y() << ")" << endl;
-	cout << "Raio: " << c.get_raio() << endl;
-	return Saida;
-}
-
-istream& operator>>(istream &Entrada, Circulo &c){
-	float x,y,raio;
-	cin >> x;
-	c.set_centro_x(x);
-	cin >> y;
-	c.set_centro_y(y);
-	cin >> raio;
-	c.set_raio(raio);
-	return Entrada;
-}
 
 
 
