@@ -50,6 +50,13 @@ string Circulo::ToString(){
 	return s;
 }
 
+Circulo Circulo::operator+(Circulo c){
+	Circulo res;
+	res = Circulo();
+	res.set_centro_x(c.get_centro_x()+get_centro_x())
+
+
+}
 
 
 
